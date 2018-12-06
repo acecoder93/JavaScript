@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .myDiv{
+            background-color: green;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    
+    
+
+<script>
+    // Creating and Inserting elements into DOM (Consists of two step: 1) Creating the element 2) Append element to document)
+
+        //Creating Element
+        var h1 = document.createElement('h1');
+        h1.textContent = 'hello world';
+
+        // Appending element to body
+        document.body.appendChild(h1);
+
+        // Appending a div element to the body container
+        var div = document.createElement('div');
+        document.body.appendChild(div);
+
+        // Creating another element
+        var h2 = document.createElement('h2');
+        h2.textContent = "my h2 tag";
+
+        // Did not have to use "document.div" because element is already created
+        div.appendChild(h2)
+
+        // Use setAttribute method to style, which is linked in the style head
+        div.setAttribute('class', 'myDiv')
+        
+        // New Inner div
+        var innerDiv = document.createElement('div');
+
+        var anchor = document.createElement('a');
+        anchor.textContent = 'yahoo'
+        anchor.setAttribute('href', 'https://www.yahoo.com')
+
+        innerDiv.appendChild(anchor);
+        div.appendChild(innerDiv);
+</script>
+</body>
+</html>
