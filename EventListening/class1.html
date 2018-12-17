@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Handling</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1>DigitalCrafts</h1>
+      <h2>New Account</h2>
+      <form method="post" action="/postCallback.html">
+
+        <label for="username">Create a username: </label>
+        <input type="text" id="username" onblur="checkUsername()" />
+        <div id="feedback"></div>
+
+        <label for="password">Create a password: </label>
+        <input type="password" id="password" />
+        <input type="submit" value="sign up!" />
+
+      </form>
+    </div>
+
+
+
+    <script>
+
+        var message = document.getElementById('feedback');
+        var username = document.getElementById('username');
+      // Method 1
+      function checkUsername(){
+        if (username.value.length < 5){   // retreiving value to see if the input field has a certain length
+            message.textContent = 'Username must be 5 characters long';
+      } else {
+        message.textContent = '';
+      }}
+
+      // Method #2---
+      username.blur = checkUsername();
+
+
+      
+  
+
+
+    </script>
+    
+    </body>
+</html>

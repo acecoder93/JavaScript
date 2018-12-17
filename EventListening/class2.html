@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Handling</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1>DigitalCrafts</h1>
+      <h2>Buy groceries</h2>
+      <ul id="shoppingList">
+        <li class="complete"><a href="#"><em>fresh</em> figs</a></li>
+        <li class="complete"><a href="#">pine nuts</a></li>
+        <li class="complete"><a href="#">honey</a></li>
+        <li class="complete"><a href="#">balsamic vinegar</a></li>
+      </ul>
+    </div>
+    
+    
+
+
+    <script>
+      var list = document.getElementById('shoppingList');
+        list.addEventListener('click', function(e){
+          // console.log(e) // This is the entire object
+          // console.log(e.target); // This will give back any information
+
+          var anchor = e.target; //
+          // must delete entire list item for it to be removed (not just "anchor" tag)
+          var listItem = anchor.parentNode; // parent of the anchor
+          var ulItem = listItem.parentNode; // identifies parent node of [listItem]
+
+          var pageItem = ulItem.parentNode;
+          ulItem.removeChild(listItem);
+          pageItem.removeChild(ulItem); // removes the entire ul item
+          // console.log(pageItem);
+
+        })
+    
+    
+    </script>
+  </body>
+</html>

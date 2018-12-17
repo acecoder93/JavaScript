@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="demo"></div>
+    <div id="finally"></div>
+
+
+    <script>
+        var demo = document.getElementById('demo');
+
+        try{
+            eval("alert('hello world')");
+        }
+        catch(err){
+            demo.textContent=err.message
+}
+
+
+
+        // try {
+        //     aaaller('Welcome guest!');
+        // }
+        // catch(err) {
+        //     var demo = document.getElementById('demo');
+        //     demo.textContent = err.message;
+
+        //     alert('this is the right function');
+        // }
+        // finally{
+        //     var finally1 = document.getElementById('finally');
+        //     finally1.textContent = 'try catch block is finished'
+        // }
+        
+    </script>
+</body>
+</html>

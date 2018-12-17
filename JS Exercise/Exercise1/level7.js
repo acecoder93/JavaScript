@@ -27,3 +27,5 @@ finalFunction(3)
     //     console.log('Bye');
     // }
 
+
+var nav = document.createElement('nav')

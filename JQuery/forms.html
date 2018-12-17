@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Change method below to GET or POST -->
+    <form action="class.html" method = "GET" onsubmit= "fun()"> 
+        <fieldset>
+        <input type="text" name = "t" required minLength = "4" id = 'name'>
+        <input type="radio" name = "r">
+        <input type="number" name = "c" value="1" min="1" max="10">
+        <input type="password" name = "password">
+        <input id="nameInput">
+
+        <fieldset>
+            <legend for="choose">Do you prefer css or html?</legend>
+            <input id="choose" name="i_like" required pattern="css| html">
+        </fieldset>
+        <button>Submit</button>
+        </fieldset>
+
+    
+
+    </form>
+
+
+
+
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+    </script>
+
+    <script>
+        // var myForm = document.getElementbyId('myForm');
+
+        // myForm.addEventListener('submit', (event)=>{
+        //     event.preventDefault();
+        //     alert('form submitted');
+        // }
+
+        // function fun(){
+        //     alert('Form Submitted');
+        // }
+
+        // .Submit()
+
+        $(()=>{
+            $('form').submit((event)=>{
+                event.preventDefault();
+                let name = $('#name').val()
+                alert(name);
+                // alert('forms using Jquery');
+            })
+        })
+
+        $('#nameInput').input(()=>{
+            console.log("Value Changed");
+        })
+        $('#nameInput').changed(()=>{
+            console.log("Value Changed");
+        })
+    </script>
+    
+</body>
+</html>

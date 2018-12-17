@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="#">This is an anchor tag.</a>
+    <a href="#" id="myAnchor">This is my anchor with ID tag.</a>
+    <a href="#" class = "myAnchorClass">Anchor Class</a>
+
+
+    <textarea name="tarea" id="tarea" cols="30" rows="10">
+
+        This is my textarea.
+
+    </textarea>
+
+    <button id = "myButton">Hide/Show</button>
+
+
+
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+    </script>
+
+    <script>
+    $(function() {
+    let $anchorTag = $('a') // DOM selection tag (JQUERY)
+    let $anchorID = $('#myAnchor') // DOM selection ID
+    let $anchorClass = $('.myAnchorClass') // DOM selection Class
+
+    console.log($anchorTag);
+    console.log($anchorID);
+    console.log($anchorClass);
+    });
+
+
+    // Creating an element using JQUERY and setting attribute
+    // Everything inside of the curly braces is an object
+    // if you are creating something, you need to use '<>' to create the element
+    let $myDiv = $('<div>', {
+        'class' : 'divClass',
+        'text' : 'Hello World!',
+        'style' : 'background-color: red; height: 200px; width: 100%'
+    });
+
+
+    // Searching for 'Body' tag; you do not need '<>'
+    let $b = $('body');
+    $b.append($myDiv);
+
+    // Adding a class to an element
+        // $b.addClass('pretend');
+
+    // Removing a class from an element
+        // $b.removeClass('pretend');
+
+    // Toggle a class on an element
+        // $b.toggleClass('');
+    
+    // Event Handler: Click
+    $myDiv.click(() =>{
+        // Code Block
+        alert('Hello World');
+    });
+
+    // Event : On() + filiter
+    $b.on('click', 'a', (event) =>{
+
+        event.preventDefault(); // prevents the link from working and navigating to another page.
+        console.log(event.target);
+    })
+
+    // Searching for tarea by ID (#) ** need to recheck
+    // $('#tarea').key((event)=>{
+    //     console.log(`keydown: ${event}`);
+        
+    // })
+    // $('#tarea').key((event)=>{
+    //     console.log(`keyup: ${event}`);
+
+    // })
+    
+    // Basic Effects (show / hide / toggle)
+    $('#myButton').click(()=>{
+        // $myDiv.hide();
+        // $myDiv.toggle();
+        // $myDiv.fadeToggle();
+        // $myDiv.slideToggle();
+        // $myDiv.fadeToggle().slideUp(); // Fade & Slide
+        // JQuery can also be set by time to control the speed of the animation
+        $myDiv.animate({
+    left: [ "+=50", "swing" ],
+    opacity: [ 0.50, "linear" ]
+}, 300 );
+
+
+    })
+
+    </script>
+</body>
+</html>
